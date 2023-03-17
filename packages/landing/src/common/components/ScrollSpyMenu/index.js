@@ -101,12 +101,19 @@ const ScrollSpyMenu = ({ className, menuItems, drawerClose, ...props }) => {
 										}}
 									>
 									   {menu.label}{' '}
-									 </button>	
-									 <Dropdown 
+									 </button>
+									 
+									 <MenuItems 
 									 	submenus={menu.submenu} 
 										dropdown={dropdown}
 										name={dropdownName}
 									/>
+
+									 {/* <Dropdown 
+									 	submenus={menu.submenu} 
+										dropdown={dropdown}
+										name={dropdownName}
+									/> */}
 								   </>
 								) : (
 									<>

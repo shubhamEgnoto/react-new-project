@@ -45,6 +45,9 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "mdb-react-ui-kit": "^5.1.0",
+    "react-bootstrap": "^2.7.2",
     "react-waypoint": "^10.1.0"
   },
   "main": "babel.config.js",

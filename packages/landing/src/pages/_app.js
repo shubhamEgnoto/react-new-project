@@ -10,6 +10,8 @@ import 'common/assets/css/rc-collapse.css';
 import 'rc-collapse/assets/index.css';
 import 'common/assets/css/rc-drawer.css';
 import '../common/assets/css/app.css';
+import 'mdbreact/dist/css/mdb.css';
+import 'mdbreact/dist/css/style.css';
 
 export default function CustomApp({ Component, pageProps }) {
   return (
