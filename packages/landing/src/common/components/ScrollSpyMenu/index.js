@@ -7,6 +7,7 @@ import { DrawerContext } from "../../contexts/DrawerContext";
 import NextImage from "../NextImage";
 import MenuItems from "containers/AppClassic/Component/MenuItems";
 import Dropdown from "containers/AppClassic/Component/Dropdown";
+import FullMenu from "containers/AppClassic/Component/FullMenu";
 
 const RenderLinkWithIcon = ({ menu }) => {
 	return (
@@ -27,7 +28,8 @@ const RenderLinkWithIcon = ({ menu }) => {
 };
 
 const ScrollSpyMenu = ({ className, menuItems, drawerClose, ...props }) => {
-	const [dropdown, setDropdown] = useState(false);
+	const [dropdownForAbout, setDropdownForAbout] = useState(false);
+	const [dropdownForService, setDropdownForService] = useState(false);
 	const [dropdownName, setDropdownName] = useState("");
 	const { dispatch } = useContext(DrawerContext);
 	// empty array for scrollspy items
@@ -67,67 +69,108 @@ const ScrollSpyMenu = ({ className, menuItems, drawerClose, ...props }) => {
 					
 					{menu.staticLink ? (
 						<>
-						{console.log("ssssssssssssssssss1111111111111")}
 						<RenderLinkWithIcon menu={menu} />
 						</>
 					) : (
 						<>
-						{console.log("ssssssssssssssssss12222222")}
 							{drawerClose ? (
 								<>
-								{console.log("sssssssssssssssss33333333333")}
-								<AnchorLink
-									href={menu.path}
-									offset={menu.offset}
-									onClick={toggleDrawer}
-								>
-									
-									{menu.label}
-								</AnchorLink>
+									<AnchorLink
+										href={menu.path}
+										offset={menu.offset}
+										onClick={toggleDrawer}
+									>
+										
+										{menu.label}
+									</AnchorLink>
 								</>
 							) : (
 								<>
 								
-								{ menu.submenu ? (
-									 <>
-									 {console.log("sssssssssssssssss444444")}
-									 <button 
-									 	type="button" 
-										aria-haspopup="menu"
-										aria-expanded={dropdown ? "true" : "false"}
-      									onClick={() => {
-											setDropdown((prev) => !prev)
-											setDropdownName(menu.label)
-										}}
-									>
-									   {menu.label}{' '}
-									 </button>
-									 
-									 <MenuItems 
-									 	submenus={menu.submenu} 
-										dropdown={dropdown}
-										name={dropdownName}
-									/>
+									
 
-									 {/* <Dropdown 
-									 	submenus={menu.submenu} 
-										dropdown={dropdown}
-										name={dropdownName}
-									/> */}
-								   </>
-								) : (
-									<>
-									{console.log("sssssssssssssssss5555555")}
-									<AnchorLink href={menu.path} offset={menu.offset}>
-									{menu.label}
+												{ menu.submenuForService ? (
+										<>
+											{/* {console.log("sssssssssssssssss444444")} */}
+											<button 
+												type="button" 
+												aria-haspopup="menu"
+												aria-expanded={dropdownForService ? "true" : "false"}
+												onClick={() => {
+													setDropdownForService((prev) => !prev)
+													setDropdownName(menu.label)
+													
+												}}
+											>
+												{menu.label}{' '}
+											</button>
+											
+											
+													<>
+														{/* {console.log("sssssssssssssssss444444first", menu.submenuForService )} */}
+														<FullMenu
+															submenus={menu.submenuForService} 
+															dropdown={dropdownForService}
+															// name={dropdownName}
+														/>
+													
+													
+													</>
+													</>
+												
 
-								</AnchorLink>
+												) : (
+											
+												
 
+											<AnchorLink href={menu.path} offset={menu.offset}>
+												{menu.label}
 
+											</AnchorLink>
+												) }
+												{ menu.submenuForAbout ? (
+										<>
+											{/* {console.log("sssssssssssssssss444444")} */}
+											<button 
+												type="button" 
+												aria-haspopup="menu"
+												aria-expanded={dropdownForAbout ? "true" : "false"}
+												onClick={() => {
+													setDropdownForAbout((prev) => !prev)
+													setDropdownName(menu.label)
+													
+												}}
+											>
+												{menu.label}{' '}
+											</button>
+											
+											
+													<>
+														{/* {console.log("sssssssssssssssss444444first", menu.submenuForAbout )} */}
+														<Dropdown
+															submenus={menu.submenuForAbout} 
+															dropdown={dropdownForAbout}
+															// name={dropdownName}
+														/>
+													
+													
+													</>
+													</>
+												
 
+												) : (
+											
+												
 
-								</>
-								)} 
+											<AnchorLink href={menu.path} offset={menu.offset}>
+												{menu.label}
+
+											</AnchorLink>
+												) }
+										
+
+									
+									
 								</>
 							)}
 						</>

@@ -21,14 +21,60 @@ export const MENU_ITEMS = [
     label: 'Service',
     path: '#feature_section',
     offset: '70',
-    submenu: [
+    submenuForService: [
       {
         label: 'DIGITAL MARKETING',
         path: 'digital-marketing',
+        submenu: [
+          {
+            label: 'Who We Are',
+            path: 'who-we-are',
+          },
+          {
+            label: 'Why Choose Us',
+            path: 'why-choose-us',
+          },
+          {
+            label: 'Awards & Recognotion',
+            path: 'awards-&-recognotion',
+          },
+          
+          {
+            label: 'Client Testimonials',
+            path: 'client-testimonials',
+          },
+          {
+            label: 'Industries We Serve',
+            path: 'industries-we-serve',
+          },
+        ]
       },
       {
         label: 'WEB DESIGN',
         path: 'web-design',
+        submenu: [
+          {
+            label: 'Who We Are',
+            path: 'who-we-are',
+          },
+          {
+            label: 'Why Choose Us',
+            path: 'why-choose-us',
+          },
+          {
+            label: 'Awards & Recognotion',
+            path: 'awards-&-recognotion',
+          },
+          
+          {
+            label: 'Client Testimonials',
+            path: 'client-testimonials',
+          },
+          {
+            label: 'Industries We Serve',
+            path: 'industries-we-serve',
+          },
+        ]
       },
       {
         label: 'WEB DEVELOPMENT',
@@ -49,7 +95,7 @@ export const MENU_ITEMS = [
     label: 'About',
     path: '#service_section',
     offset: '70',
-    submenu: [
+    submenuForAbout: [
       {
         label: 'Who We Are',
         path: 'who-we-are',

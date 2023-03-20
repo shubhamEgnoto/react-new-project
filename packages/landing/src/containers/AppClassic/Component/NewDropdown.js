@@ -1,4 +1,4 @@
-const Dropdown = ({ submenus, dropdown }) => {
+const NewDropdown = ({ submenus, dropdown }) => {
     console.log("sssssssssssssssss dropdoen", submenus);
 
     return (
@@ -15,4 +15,4 @@ const Dropdown = ({ submenus, dropdown }) => {
     );
   };
   
-  export default Dropdown;
+  export default NewDropdown;
